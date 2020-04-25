@@ -1,0 +1,26 @@
+html{
+    background-color:bisque;
+    margin: auto;
+  width: 90%;
+}
+
+h1{
+    font-size: 20px;
+    color: brown;
+}
+
+.family{
+    text-decoration: line-through;
+}
+
+div{
+    margin-bottom: 5%;
+}
+footer{
+    position: fixed;
+    bottom: 0px;
+}
+
+#det{
+    display:none;
+}

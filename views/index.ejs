@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+    <main>
+
+        <h1>Hello Word </h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/family">my family </a></li>
+                <li><a href="/search">search books</a></li>
+            </ul>
+
+        </nav>
+
+        <%books.forEach((val,index)=>{ %>
+        <div>
+            <p>kind : <%=val.kind%></p>
+            <p>selfLink: <%=val.selflink%></p>
+            <p>title : <%=val.title%></p>
+            <!-- <p>authors : <%=val.authors%></p>
+            <p>type : <%=val.type%></p> -->
+            <!-- <%console.log('dddddddddddddddddd',val.id) ; %> -->
+            <form action="/view/<%=val.id%>" method="post">
+                <button id="view" type="submit">view details</button>
+            </form>
+            <form action="/delete/<%=val.id%>?_method=delete" method="post">
+                <button type="submit">delete</button>
+            </form>
+        </div>
+
+        <%});%>
+    </main>
+    <footer>
+        <p>all right reserved</p>
+    </footer>
+
+
+</body>
+
+</html>

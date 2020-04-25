@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+    <main>
+
+        <h1>Hello Word </h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/family">my family </a></li>
+                <li><a href="/search">search books</a></li>
+            </ul>
+        </nav>
+        <section>
+            <%book.forEach((val,index)=>{ %>
+            <div>
+                <p>kind : <%=val.kind%></p>
+                <p>selfLink: <%=val.selfLink%></p>
+                <p>title : <%=val.title%></p>
+                <p>authors : <%=val.authors%></p>
+                <p>type : <%=val.type%></p>
+
+                <form action="/addToDB" method="post">
+                 <input type="hidden" name='kind' value="<%=val.kind%>">
+                 <input type="hidden" name='selfLink' value="<%=val.selfLink%>"> 
+                 <input type="hidden" name='title' value="<%=val.title%>"> 
+                 <input type="hidden" name='authors' value="<%=val.authors%>"> 
+                 <input type="hidden" name='type' value="<%=val.type%>"> 
+
+                    <button type="submit">add to my fav</button>
+                </form>
+            </div>
+
+            <%});%>
+        </section>
+    </main>
+    <footer>
+        <p>all right reserved</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+
+</html>
